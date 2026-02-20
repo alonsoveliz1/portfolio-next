@@ -1,26 +1,240 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+/* ── Light theme (default) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fdfaf0;
+  --bg-code: #f0e8d0;
+  --text: #1a0a0a;
+  --muted: #7a5c44;
+  --title: #c41c1c;
+  --accent: #c41c1c;
+  --accent2: #d97f00;
+  --accent3: #1a52a0;
+  --border: #1a0a0a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dark theme ── */
+html.dark {
+  --bg: #141211;
+  --bg-code: #1e1b18;
+  --text: #f0e8d5;
+  --muted: #9a8060;
+  --title: #ff5555;
+  --accent: #ff5555;
+  --accent2: #f5b400;
+  --accent3: #5b9bd5;
+  --border: #f0e8d5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Colors — map CSS vars → Tailwind utility names */
+  --color-bg: var(--bg);
+  --color-bg-code: var(--bg-code);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-title: var(--title);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+  --color-accent3: var(--accent3);
+  --color-border: var(--border);
+
+  /* Fonts */
+  --font-display: var(--font-bangers);
+  --font-sans: var(--font-comic-neue);
+  --font-mono: var(--font-ibm-mono);
+}
+
+/* ── Base ── */
+html {
+  background-color: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-comic-neue), 'Comic Neue', cursive, sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-bangers), 'Bangers', cursive;
+  letter-spacing: 0.05em;
+  color: var(--title);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent3);
+}
+
+/* ── Comic book starburst badge (featured/highlighted skills) ── */
+.skill-burst {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-bangers), 'Bangers', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 5px 11px 4px;
+  background: var(--accent2);
+  color: var(--bg);
+  text-transform: uppercase;
+  /* outer border + inset inner border = double-frame ink stamp look */
+  border: 2px solid var(--border);
+  box-shadow:
+    inset 0 0 0 1.5px var(--border),
+    3px 3px 0 var(--border);
+  transform: rotate(-1.5deg);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-burst:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.skill-burst:hover {
+  box-shadow:
+    inset 0 0 0 1.5px var(--border),
+    4px 4px 0 var(--border);
+  transform: rotate(-1.5deg) translate(-1px, -1px);
+}
+
+.skill-burst:nth-child(even):hover {
+  box-shadow:
+    inset 0 0 0 1.5px var(--border),
+    4px 4px 0 var(--border);
+  transform: rotate(1deg) translate(-1px, -1px);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-family: var(--font-bangers), 'Bangers', cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  border: 2px solid var(--border);
+  box-shadow: 2px 2px 0 var(--border);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease, color 0.12s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+.btn-primary {
+  background: var(--accent2);
+  color: var(--bg);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent2);
+  border-color: var(--accent2);
+  box-shadow: 2px 2px 0 var(--accent2);
+}
+
+.btn-ghost:hover {
+  background: var(--accent2);
+  color: var(--bg);
+  box-shadow: 3px 3px 0 var(--accent2);
+}
+
+.btn-sm {
+  padding: 5px 14px;
+  font-size: 0.8rem;
+}
+
+/* ── Comic card utility ── */
+.comic-card {
+  border: 1.5px solid var(--border);
+  box-shadow: 2px 2px 0 var(--border);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.comic-card:hover {
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+/* ── Typography plugin overrides ── */
+.prose {
+  --tw-prose-body: var(--text);
+  --tw-prose-headings: var(--title);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--text);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--muted);
+  --tw-prose-quote-borders: var(--accent3);
+  --tw-prose-captions: var(--muted);
+  --tw-prose-code: var(--text);
+  --tw-prose-pre-code: var(--text);
+  --tw-prose-pre-bg: var(--bg-code);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-bangers), 'Bangers', cursive;
+  letter-spacing: 0.05em;
+}
+
+.prose code {
+  font-family: var(--font-ibm-mono), monospace;
+  font-size: 0.88em;
+  background: var(--bg-code);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.prose code::before,
+.prose code::after {
+  content: "";
+}
+
+.prose pre {
+  background: var(--bg-code) !important;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.88rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--accent3);
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+.prose blockquote {
+  border-left-color: var(--accent3);
+  color: var(--muted);
+  font-style: italic;
 }
