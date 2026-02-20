@@ -1,0 +1,67 @@
+{
+  "Nav": {
+    "blog": "Blog",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "greeting": "Hey, I'm",
+    "subtitle": "Backend · Systems · Cybersecurity",
+    "description": "Computer Science Engineer based in Spain. I build reliable software — with a focus on systems programming and security.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in touch"
+  },
+  "Home": {
+    "latestPosts": "Latest posts",
+    "viewAll": "View all →",
+    "featuredProjects": "Featured projects"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Thoughts on Rust, backend engineering, and things I learn along the way.",
+    "noPosts": "No posts yet."
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "Things I've built or am working on."
+  },
+  "About": {
+    "title": "About me",
+    "bio": "I'm Alonso — a Computer Science Engineer based in Spain. I really enjoy tinkering with technology, and even though I consider myself a generalist I like to deepen on areas like Software Development and Cybersecurity.",
+    "downloadCV": "Download CV",
+    "getInTouch": "Get in touch",
+    "skillsTitle": "Skills & Tech Stack",
+    "experienceTitle": "Experience",
+    "languages": "Languages",
+    "backend": "Backend & Frameworks",
+    "infrastructure": "Infrastructure & Tools",
+    "interests": "Interests"
+  },
+  "Contact": {
+    "title": "Get in touch",
+    "description": "Want to work together, chat about Rust, or just say hello? Reach out through any of the links below.",
+    "githubDescription": "Check out my projects",
+    "linkedinDescription": "Connect with me"
+  },
+  "Tags": {
+    "title": "Tags"
+  },
+  "PostCard": {
+    "minRead": "{count} min read"
+  },
+  "ProjectCard": {
+    "liveDemo": "Live Demo"
+  },
+  "BlogPost": {
+    "backToBlog": "← Back to blog",
+    "minRead": "{count} min read"
+  },
+  "ProjectPage": {
+    "backToProjects": "← Back to projects",
+    "liveDemo": "Live Demo"
+  },
+  "Footer": {
+    "builtWith": "Built with <nextjsLink>Next.js</nextjsLink> & Framer Motion"
+  }
+}

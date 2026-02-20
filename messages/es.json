@@ -1,0 +1,67 @@
+{
+  "Nav": {
+    "blog": "Blog",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "greeting": "Hola, soy",
+    "subtitle": "Backend · Sistemas · Ciberseguridad",
+    "description": "Ingeniero Informático con base en España. Creo software fiable con enfoque en programación de sistemas y seguridad.",
+    "viewProjects": "Ver proyectos",
+    "getInTouch": "Contáctame"
+  },
+  "Home": {
+    "latestPosts": "Últimas entradas",
+    "viewAll": "Ver todo →",
+    "featuredProjects": "Proyectos destacados"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Reflexiones sobre Rust, backend y cosas que aprendo en el camino.",
+    "noPosts": "Aún no hay entradas."
+  },
+  "Projects": {
+    "title": "Proyectos",
+    "description": "Cosas que he construido o en las que estoy trabajando."
+  },
+  "About": {
+    "title": "Sobre mí",
+    "bio": "Soy Alonso — Ingeniero Informático con base en España. Disfruto mucho trasteando con la tecnología, y aunque me considero generalista, me gusta profundizar en áreas como el Desarrollo de Software y la Ciberseguridad.",
+    "downloadCV": "Descargar CV",
+    "getInTouch": "Contáctame",
+    "skillsTitle": "Habilidades y Stack",
+    "experienceTitle": "Experiencia",
+    "languages": "Lenguajes",
+    "backend": "Backend y Frameworks",
+    "infrastructure": "Infraestructura y Herramientas",
+    "interests": "Intereses"
+  },
+  "Contact": {
+    "title": "Contáctame",
+    "description": "¿Quieres colaborar, charlar sobre Rust o simplemente saludar? Escríbeme a través de cualquiera de los siguientes medios.",
+    "githubDescription": "Mira mi código",
+    "linkedinDescription": "Conéctate conmigo"
+  },
+  "Tags": {
+    "title": "Etiquetas"
+  },
+  "PostCard": {
+    "minRead": "{count} min de lectura"
+  },
+  "ProjectCard": {
+    "liveDemo": "Demo en vivo"
+  },
+  "BlogPost": {
+    "backToBlog": "← Volver al blog",
+    "minRead": "{count} min de lectura"
+  },
+  "ProjectPage": {
+    "backToProjects": "← Volver a proyectos",
+    "liveDemo": "Demo en vivo"
+  },
+  "Footer": {
+    "builtWith": "Construido con <nextjsLink>Next.js</nextjsLink> & Framer Motion"
+  }
+}
