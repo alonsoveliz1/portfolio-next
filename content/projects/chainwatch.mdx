@@ -1,0 +1,35 @@
+---
+title: "Project Beta"
+description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+date: "2025-11-20"
+weight: 2
+tech: ["Python", "Django", "WebSockets", "PostgreSQL"]
+github: "https://github.com/yourusername/chainwatch"
+live: "https://chainwatch.example.com"
+image: "/images/project-placeholder.svg"
+featured: true
+---
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+## Features
+
+- **Nemo enim ipsam**: Voluptatem quia voluptas sit aspernatur
+- **Neque porro**: Quisquam est qui dolorem ipsum quia dolor sit
+- **Ut enim ad minima**: Veniam quis nostrum exercitationem ullam
+- **Quis autem vel**: Eum iure reprehenderit qui in ea voluptate
+- **At vero eos**: Et accusamus et iusto odio dignissimos ducimus
+
+## Tech Stack
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+```python
+@websocket_consumer
+async def transaction_feed(self, event):
+    tx = await get_latest_transaction(chain_id=self.chain_id)
+    await self.send_json({
+        "type": "new_transaction",
+        "data": tx.serialize()
+    })
+```
